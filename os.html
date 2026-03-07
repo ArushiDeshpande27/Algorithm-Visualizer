@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>CPU Scheduling Visualizer</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<h1>CPU Scheduling - FCFS</h1>
+
+<label>Enter Burst Times (comma separated)</label>
+<br>
+<input id="burst" placeholder="Example: 5,3,4">
+
+<br><br>
+
+<button onclick="runFCFS()">Run FCFS</button>
+
+<h2>Chart</h2>
+
+<div id="gantt"></div>
+
+<br>
+
+
+<script src="os.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Graph Algorithms</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<a href="index.html" class="back">← Back</a>
+
+<h1>Graph Algorithm Visualizer</h1>
+
+<button onclick="runBFS()">Run BFS</button>
+<p id="bfs-output"></p>
+<div class="graph-container">
+
+<svg width="400" height="200">
+
+<line x1="80" y1="100" x2="180" y2="100" stroke="black" />
+<line x1="180" y1="100" x2="280" y2="100" stroke="black" />
+<line x1="180" y1="100" x2="180" y2="40" stroke="black" />
+
+</svg>
+
+<div class="node" id="A" style="top:80px; left:60px;">A</div>
+<div class="node" id="B" style="top:80px; left:160px;">B</div>
+<div class="node" id="C" style="top:80px; left:260px;">C</div>
+<div class="node" id="D" style="top:20px; left:160px;">D</div>
+
+</div>
+
+<script src="graph.js"></script>
+
+</body>
+</html>
