@@ -6,6 +6,11 @@
 </head>
 
 <body>
+    <a class="back" href="main.html"></a>
+<button onclick="logout()">Logout</button>
+
+<script src="auth.js"></script>
+
 <h1>Sorting Algorithm Visualizer</h1>
 
 <div class="controls">
@@ -13,9 +18,13 @@
 <button onclick="generateArray()">Generate Numbers</button>
 
 <select id="algorithm" onchange="showAlgorithmInfo()">
+
     <option value="bubble">Bubble Sort</option>
     <option value="selection">Selection Sort</option>
     <option value="insertion">Insertion Sort</option>
+    <option value="merge">Merge Sort</option>
+    <option value="quick">Quick Sort</option>
+
 </select>
 
 <button onclick="startSorting()">Start Sorting</button>
@@ -25,8 +34,12 @@
 <br>
 
 <label>Speed</label>
-<input type="range" min="10" max="500" value="100"
-oninput="changeSpeed(this.value)">
+
+<input type="range"
+       min="10"
+       max="500"
+       value="100"
+       oninput="changeSpeed(this.value)">
 
 <div id="algo-info"></div>
 

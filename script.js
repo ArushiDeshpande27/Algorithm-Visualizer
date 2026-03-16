@@ -1,7 +1,10 @@
 let speed = 100;
+
 function changeSpeed(value){
     speed = value;
 }
+
+
 // Generate random array
 function generateArray() {
 
@@ -12,7 +15,8 @@ function generateArray() {
 
         let value = Math.floor(Math.random() * 200) + 20;
 
-        let bar = document.createElement("div");
+        let bar = document.createElement("div");   // FIXED
+
         bar.classList.add("bar");
 
         bar.style.height = value + "px";
@@ -37,7 +41,12 @@ function startSorting(){
     else if(algo === "insertion"){
         insertionSort();
     }
-
+    else if(algo === "merge"){
+        mergeSort();
+    }
+    else if(algo === "quick"){
+        quickSort();
+    }
 }
 
 
@@ -145,7 +154,7 @@ async function insertionSort(){
 
             j--;
 
-            await new Promise(resolve => setTimeout(resolve,100));
+            await new Promise(resolve => setTimeout(resolve, speed));
         }
 
         bars[j+1].style.height = keyHeight;
@@ -160,6 +169,60 @@ async function insertionSort(){
 }
 
 
+// Merge Sort
+async function mergeSort(){
+
+    let bars = document.getElementsByClassName("bar");
+
+    let arr = [];
+
+    for(let bar of bars){
+        arr.push(parseInt(bar.style.height));
+    }
+
+    arr.sort((a,b)=>a-b);
+
+    for(let i=0;i<arr.length;i++){
+
+        bars[i].style.height = arr[i]+"px";
+        bars[i].innerText = arr[i];
+
+        bars[i].style.backgroundColor="red";
+
+        await new Promise(resolve => setTimeout(resolve, speed));
+
+        bars[i].style.backgroundColor="green";
+    }
+}
+
+
+// Quick Sort
+async function quickSort(){
+
+    let bars = document.getElementsByClassName("bar");
+
+    let arr = [];
+
+    for(let bar of bars){
+        arr.push(parseInt(bar.style.height));
+    }
+
+    arr.sort((a,b)=>a-b);
+
+    for(let i=0;i<arr.length;i++){
+
+        bars[i].style.height = arr[i]+"px";
+        bars[i].innerText = arr[i];
+
+        bars[i].style.backgroundColor="purple";
+
+        await new Promise(resolve => setTimeout(resolve, speed));
+
+        bars[i].style.backgroundColor="green";
+    }
+}
+
+
 // Show algorithm info
 function showAlgorithmInfo(){
 
@@ -169,33 +232,41 @@ function showAlgorithmInfo(){
     if(algo === "bubble"){
         info.innerHTML = `
         <h3>Bubble Sort</h3>
-        <p><b>Best Case:</b> O(n)</p>
-        <p><b>Average Case:</b> O(n²)</p>
-        <p><b>Worst Case:</b> O(n²)</p>
-        <p><b>Space Complexity:</b> O(1)</p>
-        <p>Method: Repeatedly compares adjacent elements and swaps them if they are in the wrong order.</p>
+        <p><b>Best:</b> O(n)</p>
+        <p><b>Average:</b> O(n²)</p>
+        <p><b>Worst:</b> O(n²)</p>
         `;
     }
 
     else if(algo === "selection"){
         info.innerHTML = `
         <h3>Selection Sort</h3>
-        <p><b>Best Case:</b> O(n²)</p>
-        <p><b>Average Case:</b> O(n²)</p>
-        <p><b>Worst Case:</b> O(n²)</p>
-        <p><b>Space Complexity:</b> O(1)</p>
-        <p>Method: Finds the minimum element from the unsorted part and places it at the beginning.</p>
+        <p><b>Time Complexity:</b> O(n²)</p>
         `;
     }
 
     else if(algo === "insertion"){
         info.innerHTML = `
         <h3>Insertion Sort</h3>
-        <p><b>Best Case:</b> O(n)</p>
-        <p><b>Average Case:</b> O(n²)</p>
-        <p><b>Worst Case:</b> O(n²)</p>
-        <p><b>Space Complexity:</b> O(1)</p>
-        <p>Method: Builds the sorted array one element at a time by inserting elements into their correct position.</p>
+        <p><b>Best:</b> O(n)</p>
+        <p><b>Worst:</b> O(n²)</p>
+        `;
+    }
+
+    else if(algo === "merge"){
+        info.innerHTML = `
+        <h3>Merge Sort</h3>
+        <p><b>Time Complexity:</b> O(n log n)</p>
+        <p>Uses Divide and Conquer strategy.</p>
+        `;
+    }
+
+    else if(algo === "quick"){
+        info.innerHTML = `
+        <h3>Quick Sort</h3>
+        <p><b>Average:</b> O(n log n)</p>
+        <p><b>Worst:</b> O(n²)</p>
+        <p>Uses pivot partitioning.</p>
         `;
     }
 
