@@ -212,3 +212,17 @@ pre{
     border-radius:10px;
     box-shadow:0 4px 10px rgba(0,0,0,0.1);
 }
+#gantt{
+    display:flex;
+    margin-top:20px;
+}
+
+.process{
+    height:50px;
+    background:#4CAF50;
+    color:white;
+    border:1px solid black;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
