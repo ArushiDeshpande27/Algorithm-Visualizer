@@ -1,4 +1,4 @@
-// Run selected scheduling algorithm
+
 function runScheduling(){
 
     let algo = document.getElementById("algorithm").value;
