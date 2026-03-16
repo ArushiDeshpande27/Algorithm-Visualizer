@@ -17,13 +17,13 @@ h1{
     margin-top:40px;
 }
 
-
+/* control section */
 
 .controls{
     margin-top:20px;
 }
 
-
+/* buttons */
 
 button{
     padding:8px 15px;
@@ -40,7 +40,7 @@ button:hover{
     background-color:#006666;
 }
 
-
+/* dropdown */
 
 select{
     padding:8px;
@@ -49,7 +49,7 @@ select{
     border:1px solid gray;
 }
 
-
+/* input fields */
 
 input{
      width:90%;
@@ -58,7 +58,7 @@ input{
     border:1px solid gray;
 }
 
-
+/* array container */
 
 #array-container{
     margin-top:60px;
@@ -68,7 +68,7 @@ input{
     height:350px;
 }
 
-
+/* sorting bars */
 
 .bar{
     width:25px;
@@ -82,7 +82,7 @@ input{
     transition:height 0.2s ease;
 }
 
-
+/* algorithm info panel */
 
 #algo-info{
     margin-top:20px;
@@ -96,7 +96,7 @@ input{
     color:black;
 }
 
-
+/* graph visuals */
 
 #graph{
     display:flex;
@@ -116,7 +116,7 @@ input{
     font-size:20px;
 }
 
-
+/* gantt chart */
 
 #gantt{
     display:flex;
@@ -131,7 +131,7 @@ input{
     text-align:center;
 }
 
-
+/* dashboard cards */
 
 .cards{
     display:flex;
@@ -167,13 +167,13 @@ input{
     background:#006666;
 }
 
-
+/* login / signup card */
 
 .card input{
     width:80%;
 }
 
-
+/* back link */
 
 .back{
     text-decoration:none;
@@ -183,7 +183,7 @@ input{
     color:#008080;
 }
 
-
+/* graph container */
 
 .graph-container{
     position:relative;
@@ -197,7 +197,7 @@ input{
     position:absolute;
 }
 
-
+/* code block */
 
 pre{
     background:white;
@@ -213,16 +213,21 @@ pre{
     box-shadow:0 4px 10px rgba(0,0,0,0.1);
 }
 #gantt{
-    display:flex;
-    margin-top:20px;
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+    border: 2px solid black;
+    padding: 5px;
+    overflow-x: auto;
 }
 
 .process{
-    height:50px;
-    background:#4CAF50;
-    color:white;
-    border:1px solid black;
-    display:flex;
-    align-items:center;
-    justify-content:center;
+    height: 50px;
+    background: #2ecc71;
+    color: white;
+    border-right: 2px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
 }
