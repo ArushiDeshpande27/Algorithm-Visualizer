@@ -16,7 +16,7 @@
 
 <label>Select Algorithm</label>
 <br>
-<select id="algorithm">
+<select id="algorithm" onchange="toggleQuantum()">
     <option value="fcfs">FCFS</option>
     <option value="rr">Round Robin</option>
 </select>
@@ -29,14 +29,14 @@
 
 <br><br>
 
+<div id="quantumSection" style="display:none;">
 <label>Time Quantum (for Round Robin)</label>
 <br>
 <input id="quantum" placeholder="Example: 2">
-
 <br><br>
+</div>
 
 <button onclick="runScheduling()">Run</button>
-
 <h2>Gantt Chart</h2>
 
 <div id="gantt"></div>
