@@ -76,3 +76,15 @@ function runRoundRobin(){
         }
     }
 }
+function toggleQuantum(){
+
+    let algo = document.getElementById("algorithm").value;
+    let quantumSection = document.getElementById("quantumSection");
+
+    if(algo === "rr"){
+        quantumSection.style.display = "block";
+    }
+    else{
+        quantumSection.style.display = "none";
+    }
+}
