@@ -1,4 +1,3 @@
-
 function runScheduling(){
 
     let algo = document.getElementById("algorithm").value;
@@ -75,7 +74,5 @@ function runRoundRobin(){
                 p.burst -= runTime;
             }
         }
-
     }
-
 }
